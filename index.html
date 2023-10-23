@@ -1,39 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Automated SWOT Analysis</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>SWOT Analysis Input</title>
+    <link rel="stylesheet" href="./assets/css/styles.css">
 </head>
+
 <body>
-    <header>
-        <h1>WebSWOTter</h1>
-        <p>Automate your SWOT analysis process</p>
-    </header>
-    <main>
-        <section id="input-form">
-            <h2>Start New Analysis</h2>
-            <form>
-                <label for="org-vision">Organization's Vision:</label>
-                <textarea id="org-vision" required></textarea>
+    <form id="swot-input-form">
+        <div class="input-group">
+            <label for="organization-vision">Organization's Vision:</label>
+            <input type="text" id="organization-vision" required>
+        </div>
 
-                <label for="org-mission">Organization's Mission:</label>
-                <textarea id="org-mission" required></textarea>
+        <div class="input-group">
+            <label for="organization-mission">Organization's Mission:</label>
+            <input type="text" id="organization-mission" required>
+        </div>
 
-                <label for="org-priorities">Strategic Priorities:</label>
-                <textarea id="org-priorities" required></textarea>
+        <div class="input-group">
+            <label for="strategic-priorities">Strategic Priorities:</label>
+            <textarea id="strategic-priorities" rows="4" required></textarea>
+        </div>
 
-                <!-- Additional input fields can be added here -->
+        <div class="input-group">
+            <label for="swot-purpose">Purpose/Objective of the SWOT:</label>
+            <textarea id="swot-purpose" rows="4" required></textarea>
+        </div>
 
-                <button type="submit" id="start-analysis">Start Analysis</button>
-            </form>
-        </section>
-    </main>
-    <footer>
-        <p>© 2023 WebSWOTter. All rights reserved.</p>
-    </footer>
-    <script src="scripts.js"></script>
+        <div class="input-group">
+            <label for="swot-completion-date">SWOT Completion Date:</label>
+            <input type="date" id="swot-completion-date" required>
+        </div>
+
+        <div id="participants-list">
+            <div class="participant">
+                <div class="input-group">
+                    <label for="participant-name-1">Name:</label>
+                    <input type="text" id="participant-name-1" required>
+                </div>
+                <div class="input-group">
+                    <label for="participant-email-1">Email:</label>
+                    <input type="email" id="participant-email-1" required>
+                </div>
+                <div class="input-group">
+                    <label for="participant-role-1">Role:</label>
+                    <input type="text" id="participant-role-1" required>
+                </div>
+            </div>
+            
+            <!-- Buttons for adding/removing participants -->
+            <button id="add-participant">Add Participant</button>
+            <button id="remove-participant">Remove Participant</button>
+        </div>
+
+        <div class="input-group">
+            <label for="survey-anonymity">Survey Anonymity:</label>
+            <select id="survey-anonymity">
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+        </div>
+
+        <div class="input-group">
+            <label for="receive-final-swot">Send participants final SWOT:</label>
+            <select id="receive-final-swot">
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+        </div>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <script src="./assets/js/scripts.js"></script>
 </body>
+
 </html>
